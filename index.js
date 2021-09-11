@@ -25,10 +25,10 @@ const saveImage = (_editionCount) => {
 // adds a signature to the top left corner of the canvas
 const signImage = (_sig) => {
   ctx.fillStyle = "#000000";
-  ctx.font = "bold 30pt Courier";
+  ctx.font = "bold 20pt Courier";
   ctx.textBaseline = "top";
   ctx.textAlign = "left";
-  ctx.fillText(_sig, 40, 40);
+  ctx.fillText(_sig, 20, 20);
 };
 
 // generate a random color hue
