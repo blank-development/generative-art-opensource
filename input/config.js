@@ -115,11 +115,11 @@ const addRarityPercentForLayer = (_rarityId, _layerId, _percentages) => {
  *************************************************************/
 
 // image width in pixels
-const width = 300;
+const width = 1600;
 // image height in pixels
-const height = 300;
+const height = 1600;
 // description for NFT in metadata file
-const description = "Shroomables.";
+const description = "Ethermages.";
 // base url to use in metadata file
 // the id of the nft will be added to this url, in the example e.g. https://hashlips/nft/1 for NFT with id 1
 const baseImageUri = "https://test/nft";
@@ -128,25 +128,31 @@ const startEditionFrom = 1;
 // amount of NFTs to generate in edition
 const editionSize = 100;
 // prefix to add to edition dna ids (to distinguish dna counts from different generation processes for the same collection)
-const editionDnaPrefix = 123
+const editionDnaPrefix = 01
 
 // create required weights
 // for each weight, call 'addRarity' with the id and from which to which element this rarity should be applied
 let rarityWeights = [
-  addRarity('super_rare', 1, 5),
-  addRarity('rare', 6, 20),
-  addRarity('original', 21, 100)
+  // addRarity('super_rare', 1, 5),
+  // addRarity('rare', 6, 20),
+  addRarity('original', 1, 100)
 ];
 
 // create required layers
 // for each layer, call 'addLayer' with the id and optionally the positioning and size
 // the id would be the name of the folder in your input directory, e.g. 'ball' for ./input/ball
 const layers = [
-  addLayer('1 background'),
-  addLayer('2 body'),
-  addLayer('3 eyes'),
-  addLayer('4 mouth'),
-  addLayer('5 hat'),
+  addLayer('0_background'),
+  addLayer('1_robes'),
+  addLayer('2_amulet'),
+  addLayer('3_head'),
+  addLayer('4_eyes'),
+  addLayer('5_mouth'),
+  addLayer('6_accessories'),
+  // addLayer('7_hairhat'),
+  // addLayer('8_hat'),
+  addLayer('7_hair'),
+  addLayer('9_staff'),
   
   // addLayer('ball', { x: 0, y: 0 }, { width: width, height: height }),
   // addLayer('eye color'),
@@ -162,17 +168,17 @@ const layers = [
 // addRarityPercentForLayer('super_rare', 'eye color', { 'super_rare': 50, 'rare': 25, 'original': 25 });
 // addRarityPercentForLayer('original', 'eye color', { 'super_rare': 50, 'rare': 25, 'original': 25 });
 
-addRarityPercentForLayer('super_rare', '1 background', { 'super_rare': 90, 'rare': 0, 'original': 10 });
-addRarityPercentForLayer('super_rare', '2 body', { 'super_rare': 0, 'rare': 0, 'original': 100 });
-addRarityPercentForLayer('super_rare', '3 eyes', { 'super_rare': 0, 'rare': 10, 'original': 90 });
-addRarityPercentForLayer('super_rare', '4 mouth', { 'super_rare': 0, 'rare': 10, 'original': 90 });
-addRarityPercentForLayer('super_rare', '5 hat', { 'super_rare': 10, 'rare': 10, 'original': 80 });
+// addRarityPercentForLayer('super_rare', '1 background', { 'super_rare': 90, 'rare': 0, 'original': 10 });
+// addRarityPercentForLayer('super_rare', '2 body', { 'super_rare': 0, 'rare': 0, 'original': 100 });
+// addRarityPercentForLayer('super_rare', '3 eyes', { 'super_rare': 0, 'rare': 10, 'original': 90 });
+// addRarityPercentForLayer('super_rare', '4 mouth', { 'super_rare': 0, 'rare': 10, 'original': 90 });
+// addRarityPercentForLayer('super_rare', '5 hat', { 'super_rare': 10, 'rare': 10, 'original': 80 });
 
-addRarityPercentForLayer('rare', '1 background', { 'super_rare': 0, 'rare': 0, 'original': 100 });
-addRarityPercentForLayer('rare', '2 body', { 'super_rare': 0, 'rare': 0, 'original': 100 });
-addRarityPercentForLayer('rare', '3 eyes', { 'super_rare': 0, 'rare': 30, 'original': 70 });
-addRarityPercentForLayer('rare', '4 mouth', { 'super_rare': 0, 'rare': 10, 'original': 90 });
-addRarityPercentForLayer('rare', '5 hat', { 'super_rare': 30, 'rare': 20, 'original': 50 });
+// addRarityPercentForLayer('rare', '1 background', { 'super_rare': 0, 'rare': 0, 'original': 100 });
+// addRarityPercentForLayer('rare', '2 body', { 'super_rare': 0, 'rare': 0, 'original': 100 });
+// addRarityPercentForLayer('rare', '3 eyes', { 'super_rare': 0, 'rare': 30, 'original': 70 });
+// addRarityPercentForLayer('rare', '4 mouth', { 'super_rare': 0, 'rare': 10, 'original': 90 });
+// addRarityPercentForLayer('rare', '5 hat', { 'super_rare': 30, 'rare': 20, 'original': 50 });
 
 module.exports = {
   layers,
