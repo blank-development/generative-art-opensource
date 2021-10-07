@@ -126,16 +126,15 @@ const baseImageUri = "https://test/nft";
 // id for edition to start from
 const startEditionFrom = 1;
 // amount of NFTs to generate in edition
-const editionSize = 100;
+const editionSize = 1000;
 // prefix to add to edition dna ids (to distinguish dna counts from different generation processes for the same collection)
 const editionDnaPrefix = 123
 
 // create required weights
 // for each weight, call 'addRarity' with the id and from which to which element this rarity should be applied
 let rarityWeights = [
-  addRarity('super_rare', 1, 5),
-  addRarity('rare', 6, 20),
-  addRarity('original', 21, 100)
+  addRarity('geek', 1, 100),
+  addRarity('original', 101, 1000)
 ];
 
 // create required layers
@@ -143,10 +142,13 @@ let rarityWeights = [
 // the id would be the name of the folder in your input directory, e.g. 'ball' for ./input/ball
 const layers = [
   addLayer('1 background'),
-  addLayer('2 body'),
-  addLayer('3 eyes'),
+  addLayer('2 shoes'),
+  addLayer('3 body'),
   addLayer('4 mouth'),
-  addLayer('5 hat'),
+  addLayer('5 eyes'),
+  addLayer('6 clothes'),
+  addLayer('7 accessories'),
+  addLayer('8 cap'),
   
   // addLayer('ball', { x: 0, y: 0 }, { width: width, height: height }),
   // addLayer('eye color'),
@@ -162,17 +164,14 @@ const layers = [
 // addRarityPercentForLayer('super_rare', 'eye color', { 'super_rare': 50, 'rare': 25, 'original': 25 });
 // addRarityPercentForLayer('original', 'eye color', { 'super_rare': 50, 'rare': 25, 'original': 25 });
 
-addRarityPercentForLayer('super_rare', '1 background', { 'super_rare': 90, 'rare': 0, 'original': 10 });
-addRarityPercentForLayer('super_rare', '2 body', { 'super_rare': 0, 'rare': 0, 'original': 100 });
-addRarityPercentForLayer('super_rare', '3 eyes', { 'super_rare': 0, 'rare': 10, 'original': 90 });
-addRarityPercentForLayer('super_rare', '4 mouth', { 'super_rare': 0, 'rare': 10, 'original': 90 });
-addRarityPercentForLayer('super_rare', '5 hat', { 'super_rare': 10, 'rare': 10, 'original': 80 });
-
-addRarityPercentForLayer('rare', '1 background', { 'super_rare': 0, 'rare': 0, 'original': 100 });
-addRarityPercentForLayer('rare', '2 body', { 'super_rare': 0, 'rare': 0, 'original': 100 });
-addRarityPercentForLayer('rare', '3 eyes', { 'super_rare': 0, 'rare': 30, 'original': 70 });
-addRarityPercentForLayer('rare', '4 mouth', { 'super_rare': 0, 'rare': 10, 'original': 90 });
-addRarityPercentForLayer('rare', '5 hat', { 'super_rare': 30, 'rare': 20, 'original': 50 });
+addRarityPercentForLayer('geek', '1 background', { 'geek': 0, 'original': 100 });
+addRarityPercentForLayer('geek', '2 shoes', { 'geek': 0, 'original': 100 });
+addRarityPercentForLayer('geek', '3 body', { 'geek': 0, 'original': 100 });
+addRarityPercentForLayer('geek', '4 mouth', { 'geek': 100, 'original': 0 });
+addRarityPercentForLayer('geek', '5 eyes', { 'geek': 100, 'original': 0 });
+addRarityPercentForLayer('geek', '6 clothes', { 'geek': 0, 'original': 100 });
+addRarityPercentForLayer('geek', '7 accessories', { 'geek': 100, 'original': 0 });
+addRarityPercentForLayer('geek', '8 cap', { 'geek': 100, 'original': 0 });
 
 module.exports = {
   layers,
