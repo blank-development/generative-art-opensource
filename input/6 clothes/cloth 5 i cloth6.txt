@@ -1,1 +1,0 @@
-cloth5 i cloth6 se mogu kombinirat, s tim da cloth5 ide ispod, a cloth6 iznad. 

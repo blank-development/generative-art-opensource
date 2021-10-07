@@ -133,8 +133,9 @@ const editionDnaPrefix = 123
 // create required weights
 // for each weight, call 'addRarity' with the id and from which to which element this rarity should be applied
 let rarityWeights = [
-  addRarity('geek', 1, 100),
-  addRarity('original', 101, 1000)
+  addRarity('alien', 1, 50),
+  addRarity('mutant', 51, 200),
+  addRarity('original', 201, 1000)
 ];
 
 // create required layers
@@ -147,7 +148,6 @@ const layers = [
   addLayer('4 mouth'),
   addLayer('5 eyes'),
   addLayer('6 clothes'),
-  addLayer('7 accessories'),
   addLayer('8 cap'),
   
   // addLayer('ball', { x: 0, y: 0 }, { width: width, height: height }),
@@ -164,14 +164,14 @@ const layers = [
 // addRarityPercentForLayer('super_rare', 'eye color', { 'super_rare': 50, 'rare': 25, 'original': 25 });
 // addRarityPercentForLayer('original', 'eye color', { 'super_rare': 50, 'rare': 25, 'original': 25 });
 
-addRarityPercentForLayer('geek', '1 background', { 'geek': 0, 'original': 100 });
-addRarityPercentForLayer('geek', '2 shoes', { 'geek': 0, 'original': 100 });
-addRarityPercentForLayer('geek', '3 body', { 'geek': 0, 'original': 100 });
-addRarityPercentForLayer('geek', '4 mouth', { 'geek': 100, 'original': 0 });
-addRarityPercentForLayer('geek', '5 eyes', { 'geek': 100, 'original': 0 });
-addRarityPercentForLayer('geek', '6 clothes', { 'geek': 0, 'original': 100 });
-addRarityPercentForLayer('geek', '7 accessories', { 'geek': 100, 'original': 0 });
-addRarityPercentForLayer('geek', '8 cap', { 'geek': 100, 'original': 0 });
+addRarityPercentForLayer('alien', '1 background', { 'alien': 0, 'mutant': 0, 'original': 100 });
+addRarityPercentForLayer('alien', '3 body', { 'alien': 0, 'mutant': 0, 'original': 100 });
+
+addRarityPercentForLayer('mutant', '1 background', { 'alien': 0, 'mutant': 0, 'original': 100 });
+addRarityPercentForLayer('mutant', '2 shoes', { 'alien': 0, 'mutant': 0, 'original': 100 });
+addRarityPercentForLayer('mutant', '3 body', { 'alien': 0, 'mutant': 0, 'original': 100 });
+addRarityPercentForLayer('mutant', '6 clothes', { 'alien': 0, 'mutant': 0, 'original': 100 });
+addRarityPercentForLayer('mutant', '8 cap', { 'alien': 0, 'mutant': 0, 'original': 100 });
 
 module.exports = {
   layers,
