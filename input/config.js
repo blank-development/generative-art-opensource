@@ -126,33 +126,33 @@ const baseImageUri = "https://test/nft";
 // id for edition to start from
 const startEditionFrom = 1;
 // amount of NFTs to generate in edition
-const editionSize = 100;
+const editionSize = 500;
 // prefix to add to edition dna ids (to distinguish dna counts from different generation processes for the same collection)
-const editionDnaPrefix = 01
+const editionDnaPrefix = 0
 
 // create required weights
 // for each weight, call 'addRarity' with the id and from which to which element this rarity should be applied
 let rarityWeights = [
   // addRarity('super_rare', 1, 5),
   // addRarity('rare', 6, 20),
-  addRarity('original', 1, 100)
+  addRarity('original', 1, 500)
 ];
 
 // create required layers
 // for each layer, call 'addLayer' with the id and optionally the positioning and size
 // the id would be the name of the folder in your input directory, e.g. 'ball' for ./input/ball
 const layers = [
-  addLayer('0_background'),
-  addLayer('1_robes'),
-  addLayer('2_amulet'),
-  addLayer('3_head'),
-  addLayer('4_eyes'),
-  addLayer('5_mouth'),
-  addLayer('6_accessories'),
-  // addLayer('7_hairhat'),
-  // addLayer('8_hat'),
-  addLayer('7_hair'),
-  addLayer('9_staff'),
+  addLayer('1 Background'),
+  addLayer('2 Robe'),
+  addLayer('3 Amulet'),
+  addLayer('4 Head'),
+  addLayer('5 Hair'),
+  //addLayer('5 HairHat'),
+  //addLayer('6 Hat'),
+  addLayer('7 Eyes'),
+  addLayer('8 Accessories'),
+  addLayer('9 Mouth'),
+  addLayer('10 Staff'),
   
   // addLayer('ball', { x: 0, y: 0 }, { width: width, height: height }),
   // addLayer('eye color'),
